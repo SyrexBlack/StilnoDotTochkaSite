@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Стильно и точка - Салон красоты</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#9c161d",
+              "background-light": "#ffffff", 
+              "background-dark": "#211112",
+              "text-main": "#1b0e0f",
+              "text-muted": "#6b5e5f",
+              "border-light": "#e6d1d2",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"],
+              "serif": ["Playfair Display", "serif"],
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-border-light dark:border-gray-800 transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Logo -->
+<a class="flex items-center gap-2 group" href="#">
+<span class="font-serif-display text-2xl lg:text-3xl font-bold tracking-tight text-primary">Стильно и точка</span>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden lg:flex items-center gap-8 xl:gap-12">
+<a class="text-sm uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#services">Услуги</a>
+<a class="text-sm uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#about">О нас</a>
+<a class="text-sm uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#portfolio">Работы</a>
+<a class="text-sm uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#masters">Мастера</a>
+<a class="text-sm uppercase tracking-widest hover:text-primary transition-colors duration-200" href="#contacts">Контакты</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<a class="hidden xl:block text-sm font-medium hover:text-primary transition-colors" href="tel:+79990000000">+7 (999) 000-00-00</a>
+<button class="hidden sm:flex items-center justify-center h-10 px-6 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 uppercase text-xs font-bold tracking-widest rounded-sm">
+                    Записаться
+                </button>
+<!-- Mobile Menu Button -->
+<button class="lg:hidden p-2 text-text-main">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center bg-background-light dark:bg-background-dark overflow-hidden">
+<div class="w-full max-w-[1440px] px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center py-12 lg:py-0">
+<div class="flex flex-col items-start lg:pr-12 order-2 lg:order-1 relative z-10">
+<span class="inline-block py-1 px-3 border border-primary/20 text-primary text-xs uppercase tracking-[0.2em] mb-6 rounded-full bg-primary/5">Beauty Salon</span>
+<h1 class="font-serif-display text-5xl lg:text-7xl xl:text-8xl leading-[1.1] text-text-main dark:text-white mb-8">
+                        Искусство <br/>
+<span class="text-primary italic">быть собой</span>
+</h1>
+<p class="text-text-muted dark:text-gray-300 text-lg font-light leading-relaxed max-w-md mb-10">
+                        Пространство безупречного стиля, где каждая деталь работает на вашу красоту. Высокая мода в повседневной жизни.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="h-12 px-8 bg-primary text-white text-sm font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors rounded-sm flex items-center justify-center gap-2">
+                            Записаться онлайн
+                            <span class="material-symbols-outlined text-sm">arrow_outward</span>
+</button>
+<button class="h-12 px-8 border border-border-light text-text-main dark:text-white hover:border-primary hover:text-primary transition-colors rounded-sm text-sm uppercase tracking-widest">
+                            Наши работы
+                        </button>
+</div>
+</div>
+<div class="relative h-[50vh] lg:h-[80vh] w-full order-1 lg:order-2 group overflow-hidden rounded-sm">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105" data-alt="High fashion portrait of a woman with elegant makeup and sleek hair"></div>
+</div>
+</div>
+<!-- Decorative thin lines -->
+<div class="absolute bottom-0 left-6 right-6 h-px bg-border-light dark:bg-gray-800"></div>
+<div class="absolute top-0 right-1/2 w-px h-full bg-border-light dark:bg-gray-800 hidden lg:block -z-0"></div>
+</section>
+<!-- About / Philosophy Section -->
+<section class="py-24 lg:py-32 bg-background-light dark:bg-background-dark relative" id="about">
+<div class="max-w-[960px] mx-auto px-6 text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">spa</span>
+<h2 class="font-serif-display text-3xl lg:text-5xl text-text-main dark:text-white mb-8">
+                    Мы создаем не просто образ, <br/>а настроение уверенности.
+                </h2>
+<div class="w-24 h-px bg-primary mx-auto mb-8"></div>
+<p class="text-text-muted dark:text-gray-300 text-lg font-light leading-relaxed max-w-2xl mx-auto">
+                    В "Стильно и точка" мы верим, что красота — это не шаблон, а индивидуальность. Наши мастера — художники, которые видят вашу уникальность и подчеркивают её с помощью современных техник и премиальной косметики.
+                </p>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 bg-white dark:bg-neutral-900 border-t border-border-light dark:border-neutral-800" id="services">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div>
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2 block">Прайс-лист</span>
+<h2 class="font-serif-display text-4xl lg:text-5xl text-text-main dark:text-white">Наши услуги</h2>
+</div>
+<a class="text-sm uppercase tracking-widest border-b border-primary pb-1 hover:text-primary transition-colors inline-flex items-center gap-1" href="#">
+                        Полный прайс <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+<!-- Column 1: Hair -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-2xl font-light text-primary">content_cut</span>
+<h3 class="font-serif-display text-2xl text-text-main dark:text-white italic">Стрижки и укладки</h3>
+</div>
+<!-- Table structure adapted to list -->
+<div class="flex flex-col">
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Женская стрижка</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">от 2 000 ₽</span>
+</div>
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Мужская стрижка</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">1 500 ₽</span>
+</div>
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Укладка дневная</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">1 500 ₽</span>
+</div>
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Вечерняя прическа</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">3 500 ₽</span>
+</div>
+</div>
+</div>
+<!-- Column 2: Color & Care -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-2xl font-light text-primary">palette</span>
+<h3 class="font-serif-display text-2xl text-text-main dark:text-white italic">Окрашивание</h3>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Окрашивание в один тон</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">от 4 000 ₽</span>
+</div>
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Сложное окрашивание (Airtouch)</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">от 8 000 ₽</span>
+</div>
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Тонирование</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">2 500 ₽</span>
+</div>
+<div class="flex justify-between items-baseline py-4 border-b border-border-light dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors px-2">
+<span class="text-base text-text-main dark:text-gray-200">Уход "Абсолютное счастье"</span>
+<div class="flex-grow mx-4 border-b border-dotted border-gray-300 dark:border-gray-700 relative top-[-4px]"></div>
+<span class="text-base font-medium text-text-main dark:text-white whitespace-nowrap">3 000 ₽</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Masonry -->
+<section class="py-24 bg-background-light dark:bg-background-dark" id="portfolio">
+<div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+<div class="text-center mb-16">
+<h2 class="font-serif-display text-4xl lg:text-5xl text-text-main dark:text-white mb-4">Наши работы</h2>
+<p class="text-text-muted dark:text-gray-400 font-light tracking-wide uppercase text-sm">Вдохновение в каждом кадре</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 auto-rows-[400px]">
+<!-- Item 1: Large portrait -->
+<div class="relative group overflow-hidden rounded-sm lg:row-span-2">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596416438567-46b064f00ce2?q=80&amp;w=1920&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up portrait of a woman with red lipstick and blonde hair"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
+<p class="font-serif-display text-xl">Вечерний образ</p>
+<p class="text-xs uppercase tracking-widest mt-1">Макияж</p>
+</div>
+</div>
+<!-- Item 2: Square -->
+<div class="relative group overflow-hidden rounded-sm">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Minimalist nail art close up"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
+<p class="font-serif-display text-xl">Маникюр Nude</p>
+<p class="text-xs uppercase tracking-widest mt-1">Ногтевой сервис</p>
+</div>
+</div>
+<!-- Item 3: Tall -->
+<div class="relative group overflow-hidden rounded-sm lg:row-span-2">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&amp;w=2069&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Stylish woman with long curly hair in studio lighting"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
+<p class="font-serif-display text-xl">Голливудская волна</p>
+<p class="text-xs uppercase tracking-widest mt-1">Укладка</p>
+</div>
+</div>
+<!-- Item 4: Square -->
+<div class="relative group overflow-hidden rounded-sm">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&amp;w=2069&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up of eye makeup with glitter"></div>
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
+<p class="font-serif-display text-xl">Smoky Eyes</p>
+<p class="text-xs uppercase tracking-widest mt-1">Визаж</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<button class="h-12 px-10 border border-border-light text-text-main dark:text-white dark:border-neutral-700 hover:bg-text-main hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 rounded-sm text-sm uppercase tracking-widest">
+                        Смотреть все работы
+                    </button>
+</div>
+</div>
+</section>
+<!-- Masters Section -->
+<section class="py-24 bg-white dark:bg-neutral-900 border-t border-border-light dark:border-neutral-800" id="masters">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+<div class="mb-16">
+<span class="text-primary text-xs font-bold uppercase tracking-widest mb-2 block">Команда</span>
+<h2 class="font-serif-display text-4xl lg:text-5xl text-text-main dark:text-white">Ведущие мастера</h2>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Master 1 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] mb-6 rounded-sm bg-neutral-100">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&amp;w=1961&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a female hair stylist"></div>
+</div>
+<h3 class="font-serif-display text-xl text-text-main dark:text-white mb-1 group-hover:text-primary transition-colors">Анна Смирнова</h3>
+<p class="text-text-muted text-sm uppercase tracking-wide">Топ-стилист</p>
+</div>
+<!-- Master 2 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] mb-6 rounded-sm bg-neutral-100">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&amp;w=1887&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a female makeup artist"></div>
+</div>
+<h3 class="font-serif-display text-xl text-text-main dark:text-white mb-1 group-hover:text-primary transition-colors">Мария Волкова</h3>
+<p class="text-text-muted text-sm uppercase tracking-wide">Визажист</p>
+</div>
+<!-- Master 3 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] mb-6 rounded-sm bg-neutral-100">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?q=80&amp;w=2134&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a male hair colorist"></div>
+</div>
+<h3 class="font-serif-display text-xl text-text-main dark:text-white mb-1 group-hover:text-primary transition-colors">Дмитрий Орлов</h3>
+<p class="text-text-muted text-sm uppercase tracking-wide">Колорист</p>
+</div>
+<!-- Master 4 -->
+<div class="group cursor-pointer">
+<div class="relative overflow-hidden aspect-[3/4] mb-6 rounded-sm bg-neutral-100">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595956553066-fe2428c33325?q=80&amp;w=1887&amp;auto=format&amp;fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of a female nail technician"></div>
+</div>
+<h3 class="font-serif-display text-xl text-text-main dark:text-white mb-1 group-hover:text-primary transition-colors">Елена Попова</h3>
+<p class="text-text-muted text-sm uppercase tracking-wide">Nail-мастер</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-primary text-white text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+<div class="relative z-10 max-w-[800px] mx-auto px-6">
+<h2 class="font-serif-display text-4xl lg:text-5xl mb-6">Готовы к преображению?</h2>
+<p class="text-white/80 text-lg mb-10 font-light">Запишитесь онлайн и получите скидку 10% на первое посещение любого мастера.</p>
+<button class="h-14 px-10 bg-white text-primary text-sm font-bold uppercase tracking-widest hover:bg-neutral-100 transition-colors rounded-sm shadow-lg">
+                    Записаться сейчас
+                </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-background-dark text-white pt-20 pb-10 border-t border-white/5" id="contacts">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-12">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Brand -->
+<div class="flex flex-col gap-6">
+<span class="font-serif-display text-2xl font-bold tracking-tight">Стильно и точка</span>
+<p class="text-gray-400 text-sm font-light leading-relaxed">
+                            Салон красоты премиум-класса в центре города. Мы заботимся о вашей красоте и здоровье каждый день.
+                        </p>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-4">
+<h4 class="text-sm font-bold uppercase tracking-widest mb-2 text-primary">Навигация</h4>
+<a class="text-sm text-gray-400 hover:text-white transition-colors" href="#">Услуги</a>
+<a class="text-sm text-gray-400 hover:text-white transition-colors" href="#">Прайс-лист</a>
+<a class="text-sm text-gray-400 hover:text-white transition-colors" href="#">Портфолио</a>
+<a class="text-sm text-gray-400 hover:text-white transition-colors" href="#">Подарочные сертификаты</a>
+</div>
+<!-- Contact -->
+<div class="flex flex-col gap-4">
+<h4 class="text-sm font-bold uppercase tracking-widest mb-2 text-primary">Контакты</h4>
+<div class="flex items-start gap-3 text-sm text-gray-400">
+<span class="material-symbols-outlined text-lg mt-0.5">location_on</span>
+<span>Москва, ул. Петровка, 12<br/>БЦ "Стиль", 2 этаж</span>
+</div>
+<div class="flex items-center gap-3 text-sm text-gray-400">
+<span class="material-symbols-outlined text-lg">call</span>
+<a class="hover:text-white transition-colors" href="tel:+79990000000">+7 (999) 000-00-00</a>
+</div>
+<div class="flex items-center gap-3 text-sm text-gray-400">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span>Ежедневно: 10:00 - 22:00</span>
+</div>
+</div>
+<!-- Social -->
+<div class="flex flex-col gap-4">
+<h4 class="text-sm font-bold uppercase tracking-widest mb-2 text-primary">Мы в соцсетях</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+<p>© 2023 Стильно и точка. Все права защищены.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Политика конфиденциальности</a>
+<a class="hover:text-white transition-colors" href="#">Договор оферты</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Floating Action Button (Optional for Mobile) -->
+<a class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full shadow-xl flex items-center justify-center z-50 hover:scale-110 transition-transform lg:hidden" href="https://wa.me/79990000000">
+<svg class="w-8 h-8 fill-white" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+</main>
+</body></html>
