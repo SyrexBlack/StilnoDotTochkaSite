@@ -1,5 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Scissors, MapPin, Phone, Calendar, Star, Check, ChevronDown, ChevronUp, ArrowUpRight, Instagram, Send } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Menu, X, Scissors, MapPin, Phone, Calendar, Star, Check, ChevronDown, ChevronUp, ArrowUpRight, Instagram, Send, Users, Award, ThumbsUp } from 'lucide-react';
+
+const AnimatedCounter = ({ end, suffix = '', duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true;
+          const startTime = performance.now();
+          const animate = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,8 +87,8 @@ const App = () => {
           </a>
 
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
-            <a href="#services" className="text-xs uppercase tracking-[0.15em] hover:opacity-70 transition-opacity">Услуги</a>
             <a href="#about" className="text-xs uppercase tracking-[0.15em] hover:opacity-70 transition-opacity">О нас</a>
+            <a href="#services" className="text-xs uppercase tracking-[0.15em] hover:opacity-70 transition-opacity">Услуги</a>
             <a href="#portfolio" className="text-xs uppercase tracking-[0.15em] hover:opacity-70 transition-opacity">Работы</a>
             <a href="#reviews" className="text-xs uppercase tracking-[0.15em] hover:opacity-70 transition-opacity">Отзывы</a>
             <a href="#contacts" className="text-xs uppercase tracking-[0.15em] hover:opacity-70 transition-opacity">Контакты</a>
@@ -87,8 +116,8 @@ const App = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-[#e6d1d2] py-6 px-6 flex flex-col gap-4">
-            <a href="#services" onClick={toggleMenu} className="text-sm uppercase tracking-widest py-2">Услуги</a>
             <a href="#about" onClick={toggleMenu} className="text-sm uppercase tracking-widest py-2">О нас</a>
+            <a href="#services" onClick={toggleMenu} className="text-sm uppercase tracking-widest py-2">Услуги</a>
             <a href="#portfolio" onClick={toggleMenu} className="text-sm uppercase tracking-widest py-2">Работы</a>
             <a href="#reviews" onClick={toggleMenu} className="text-sm uppercase tracking-widest py-2">Отзывы</a>
             <a href="#contacts" onClick={toggleMenu} className="text-sm uppercase tracking-widest py-2">Контакты</a>
@@ -153,6 +182,50 @@ const App = () => {
           <p className="text-[#6b5e5f] text-lg font-light leading-relaxed max-w-2xl mx-auto">
             В "Стильно и точка" мы верим, что красота — это не шаблон, а индивидуальность. Наши мастера — художники, которые видят вашу уникальность и подчеркивают её с помощью современных техник и премиальной косметики.
           </p>
+        </div>
+      </section>
+
+      {/* Stats Counters */}
+      <section className="py-16 border-t border-[#e6d1d2]">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Users size={28} style={{ color: PRIMARY }} />
+              </div>
+              <div className="font-['Playfair_Display'] text-4xl lg:text-5xl font-bold mb-2" style={{ color: PRIMARY }}>
+                <AnimatedCounter end={500} suffix="+" />
+              </div>
+              <p className="text-[#6b5e5f] text-sm font-light uppercase tracking-widest">Довольных клиентов</p>
+            </div>
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Award size={28} style={{ color: PRIMARY }} />
+              </div>
+              <div className="font-['Playfair_Display'] text-4xl lg:text-5xl font-bold mb-2" style={{ color: PRIMARY }}>
+                <AnimatedCounter end={3} />
+              </div>
+              <p className="text-[#6b5e5f] text-sm font-light uppercase tracking-widest">Года работы</p>
+            </div>
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <Star size={28} style={{ color: PRIMARY }} />
+              </div>
+              <div className="font-['Playfair_Display'] text-4xl lg:text-5xl font-bold mb-2" style={{ color: PRIMARY }}>
+                5.0
+              </div>
+              <p className="text-[#6b5e5f] text-sm font-light uppercase tracking-widest">Рейтинг</p>
+            </div>
+            <div className="text-center">
+              <div className="flex justify-center mb-4">
+                <ThumbsUp size={28} style={{ color: PRIMARY }} />
+              </div>
+              <div className="font-['Playfair_Display'] text-4xl lg:text-5xl font-bold mb-2" style={{ color: PRIMARY }}>
+                <AnimatedCounter end={100} suffix="%" />
+              </div>
+              <p className="text-[#6b5e5f] text-sm font-light uppercase tracking-widest">Положительных отзывов</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -280,8 +353,8 @@ const App = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
-              "IMG_4471.MOV", "IMG_4472.MOV", "IMG_4699.MOV", "IMG_4714.MOV",
-              "IMG_4899.MOV", "IMG_4960.MOV", "IMG_4997.MOV", "IMG_5062.MOV"
+              "IMG_4471.mp4", "IMG_4472.mp4", "IMG_4699.mp4", "IMG_4714.mp4",
+              "IMG_4899.mp4", "IMG_4960.mp4", "IMG_4997.mp4", "IMG_5062.mp4"
             ].map((file, idx) => (
               <div key={idx} className="relative aspect-[9/16] bg-black rounded-lg overflow-hidden group">
                 <video
@@ -360,6 +433,27 @@ const App = () => {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-10">
+            <h2 className="font-['Playfair_Display'] text-3xl lg:text-4xl mb-3">Как нас найти</h2>
+            <p className="text-[#6b5e5f] text-sm font-light">г. Пермь, ул. Уфимская, 16</p>
+          </div>
+          <div className="rounded-xl overflow-hidden border border-[#e6d1d2] shadow-sm">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A0&source=constructor&ll=56.229498%2C57.976591&z=16&pt=56.229498%2C57.976591%2Cpm2rdm"
+              width="100%"
+              height="300"
+              frameBorder="0"
+              allowFullScreen
+              className="block w-full"
+              title="Стильно и точка на карте"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer id="contacts" className="bg-[#211112] text-white pt-20 pb-10 border-t border-white/5">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
@@ -409,6 +503,7 @@ const App = () => {
           </div>
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
             <p>© {new Date().getFullYear()} Стильно и точка. Все права защищены.</p>
+            <a href="https://t.me/GregorysJourney" target="_blank" rel="noopener noreferrer" className="px-4 py-2 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c]/10 hover:text-[#e0c068] transition-all rounded">Разработка сайта — @GregorysJourney</a>
           </div>
         </div>
       </footer>
