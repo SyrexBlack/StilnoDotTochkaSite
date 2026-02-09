@@ -353,19 +353,19 @@ const App = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
-              "IMG_4471.mp4", "IMG_4472.mp4", "IMG_4699.mp4", "IMG_4714.mp4",
-              "IMG_4899.mp4", "IMG_4960.mp4", "IMG_4997.mp4", "IMG_5062.mp4"
-            ].map((file, idx) => (
+              { file: "IMG_4471.mp4", t: 1.5 }, { file: "IMG_4472.mp4", t: 3 }, { file: "IMG_4699.mp4", t: 1.5 }, { file: "IMG_4714.mp4", t: 1.5 },
+              { file: "IMG_4899.mp4", t: 1.5 }, { file: "IMG_4960.mp4", t: 1.5 }, { file: "IMG_4997.mp4", t: 1.5 }, { file: "IMG_5062.mp4", t: 1.5 }
+            ].map(({ file, t }, idx) => (
               <div key={idx} className="relative aspect-[9/16] bg-black rounded-lg overflow-hidden group">
                 <video
-                  src={`/video/${file}`}
+                  src={`/video/${file}#t=${t}`}
                   className="absolute inset-0 w-full h-full object-cover"
                   muted
                   loop
                   playsInline
                   preload="metadata"
                   onMouseEnter={(e) => e.currentTarget.play()}
-                  onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+                  onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = t; }}
                   onTouchStart={(e) => {
                     if (e.currentTarget.paused) e.currentTarget.play();
                     else { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }
