@@ -20,19 +20,15 @@ const App = () => {
   const tgLink = "https://t.me/Edinorog_59";
   const phoneNumber = "+7 (909) 102-93-92";
 
-  const services = {
-    haircuts: [
-      { name: "Женская стрижка", price: "от 1 000 ₽" },
-      { name: "Мужская стрижка", price: "от 700 ₽" },
-      { name: "Укладка дневная", price: "1 500 ₽" },
-    ],
-    treatments: [
-      { name: "Кератиновое выпрямление", price: "от 3 000 ₽" },
-      { name: "Холодное восстановление", price: "от 1 500 ₽" },
-      { name: "Ботокс для волос", price: "от 2 500 ₽" },
-      { name: "Окрашивание в один тон", price: "от 2 500 ₽" },
-    ]
-  };
+  const services = [
+    "Окрашивание волос",
+    "Женская стрижка",
+    "Уходовые процедуры для волос",
+    "Кератиновое выпрямление",
+    "Ботокс для волос",
+    "Холодное восстановление",
+    "Массаж тела",
+  ];
 
   const reviews = [
     { name: "Григорий Ефимов", text: "Искал медь, а нашёл золото. Мастер Илья выполнил одну из лучших стрижек. Крайне доброжелательный, профессионал своего дела.", rating: 5 },
@@ -165,43 +161,66 @@ const App = () => {
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
-              <span className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: PRIMARY }}>Прайс-лист</span>
+              <span className="text-xs font-bold uppercase tracking-widest mb-2 block" style={{ color: PRIMARY }}>Что мы делаем</span>
               <h2 className="font-['Playfair_Display'] text-4xl lg:text-5xl">Наши услуги</h2>
             </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-            {/* Column 1: Haircuts */}
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center gap-4 mb-2">
+            {/* Services List */}
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4 mb-4">
                 <Scissors className="text-2xl" style={{ color: PRIMARY }} />
-                <h3 className="font-['Playfair_Display'] text-2xl italic">Стрижки и укладки</h3>
+                <h3 className="font-['Playfair_Display'] text-2xl italic">Направления</h3>
               </div>
               <div className="flex flex-col">
-                {services.haircuts.map((item, idx) => (
-                  <div key={idx} className="flex justify-between items-baseline py-4 border-b border-[#e6d1d2] hover:bg-neutral-50 transition-colors px-2">
-                    <span className="text-base">{item.name}</span>
-                    <div className="flex-grow mx-4 border-b border-dotted border-gray-300 relative top-[-4px]"></div>
-                    <span className="text-base font-medium whitespace-nowrap">{item.price}</span>
+                {services.map((name, idx) => (
+                  <div key={idx} className="flex items-center gap-4 py-4 border-b border-[#e6d1d2] hover:bg-neutral-50 transition-colors px-2">
+                    <Check size={18} style={{ color: PRIMARY }} className="flex-shrink-0" />
+                    <span className="text-base">{name}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Column 2: Treatments */}
-            <div className="flex flex-col gap-8">
-              <div className="flex items-center gap-4 mb-2">
-                <span className="material-symbols-outlined text-2xl" style={{ color: PRIMARY }}>spa</span>
-                <h3 className="font-['Playfair_Display'] text-2xl italic">Уход и окрашивание</h3>
-              </div>
-              <div className="flex flex-col">
-                {services.treatments.map((item, idx) => (
-                  <div key={idx} className="flex justify-between items-baseline py-4 border-b border-[#e6d1d2] hover:bg-neutral-50 transition-colors px-2">
-                    <span className="text-base">{item.name}</span>
-                    <div className="flex-grow mx-4 border-b border-dotted border-gray-300 relative top-[-4px]"></div>
-                    <span className="text-base font-medium whitespace-nowrap">{item.price}</span>
-                  </div>
-                ))}
+            {/* Promo Block */}
+            <div className="flex flex-col gap-6">
+              <div className="p-8 lg:p-10 border-2 border-dashed hover:border-solid transition-all" style={{ borderColor: `${PRIMARY}40`, backgroundColor: `${PRIMARY}05` }}>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="material-symbols-outlined text-3xl" style={{ color: PRIMARY }}>loyalty</span>
+                  <h3 className="font-['Playfair_Display'] text-2xl italic">Подписчикам — скидка</h3>
+                </div>
+                <div className="mb-6">
+                  <span className="inline-block text-5xl lg:text-6xl font-['Playfair_Display'] font-bold mb-2" style={{ color: PRIMARY }}>−20%</span>
+                  <p className="text-lg text-[#6b5e5f] font-light">на первый визит по промокоду</p>
+                </div>
+                <div className="inline-block px-6 py-3 mb-6 text-xl font-bold tracking-[0.15em] border-2" style={{ borderColor: PRIMARY, color: PRIMARY, backgroundColor: `${PRIMARY}08` }}>
+                  СТИЛЬ
+                </div>
+                <div className="space-y-3 text-sm text-[#6b5e5f]">
+                  <p className="flex items-start gap-2">
+                    <Check size={16} style={{ color: PRIMARY }} className="mt-0.5 flex-shrink-0" />
+                    Подпишитесь на нашу группу ВКонтакте
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <Check size={16} style={{ color: PRIMARY }} className="mt-0.5 flex-shrink-0" />
+                    Напишите в сообщения сообщества промокод
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <Check size={16} style={{ color: PRIMARY }} className="mt-0.5 flex-shrink-0" />
+                    Действует только для подписчиков группы
+                  </p>
+                </div>
+                <a
+                  href={vkLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 h-12 px-8 text-white text-sm font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-3 hover:opacity-90 w-full"
+                  style={{ backgroundColor: PRIMARY }}
+                >
+                  <span className="font-bold">VK</span>
+                  Подписаться на группу
+                </a>
               </div>
             </div>
           </div>
@@ -248,6 +267,45 @@ const App = () => {
                 <p className="text-xs uppercase tracking-widest mt-1">Прически</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-24 bg-neutral-50 border-t border-[#e6d1d2]">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <h2 className="font-['Playfair_Display'] text-4xl lg:text-5xl mb-4">Видео</h2>
+            <p className="text-[#6b5e5f] font-light tracking-wide uppercase text-sm">Процесс и результат</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {[
+              "IMG_4471.MOV", "IMG_4472.MOV", "IMG_4699.MOV", "IMG_4714.MOV",
+              "IMG_4899.MOV", "IMG_4960.MOV", "IMG_4997.MOV", "IMG_5062.MOV"
+            ].map((file, idx) => (
+              <div key={idx} className="relative aspect-[9/16] bg-black rounded-lg overflow-hidden group">
+                <video
+                  src={`/video/${file}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onMouseEnter={(e) => e.currentTarget.play()}
+                  onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+                  onTouchStart={(e) => {
+                    if (e.currentTarget.paused) e.currentTarget.play();
+                    else { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors pointer-events-none"></div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-70 group-hover:opacity-0 transition-opacity pointer-events-none">
+                  <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center">
+                    <div className="w-0 h-0 border-l-[18px] border-l-[#9c161d] border-t-[11px] border-t-transparent border-b-[11px] border-b-transparent ml-1.5"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
